@@ -68,7 +68,7 @@ func broadcastMessage(sender net.Conn, message string) {
 
 	for client := range clients {
 		if client != sender {
-			fmt.Fprintf(client, "[%s] %s\n", sender.RemoteAddr(), message)
+			fmt.Fprintf(client, "%s\n", message)
 		}
 	}
 }
